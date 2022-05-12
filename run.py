@@ -73,10 +73,10 @@ while start_game == True:
   answer4 = random.choice(word_list)
   if answer4 == answer3:
     answer4 = random.choice(word_list)
-  start = input('Press 1 to learn how to play, press 2 to choose difficulty: ')
+  start = input('Press 1 to learn how to play, press 2 to choose difficulty: \n')
   if start == '1':
     print('Instructions')
-  challenge = input("Press 1 for easy mode, 2 for hard mode and 3 for super hard mode: ")
+  challenge = input("Press 1 for easy mode, 2 for hard mode and 3 for super hard mode: /n")
   max_attempts = num_of_attempts(challenge)
   count = max_attempts + 1
   play_game = True
@@ -148,7 +148,6 @@ while start_game == True:
           if (guess_1 + guess_2 + guess_3 + guess_4) == 4:
             print('Woo you got all the answers')
             print(f'You got it in {remain} guesses')
-            display_graphics_quordle(attempts1, attempts2, attempts3, attempts4, max_attempts)
             guess_1 = 0
             guess_2 = 0
             guess_3 = 0
@@ -169,7 +168,6 @@ while start_game == True:
               attempts3.clear()
               attempts4.clear()
           complete_guess = False
-          # display_graphics_quordle(attempts1, attempts2, attempts3, attempts4, max_attempts)
           table.add_column("Wordle", attempts1)
           table.add_column('Super', attempts2)
           table.add_column("Hard", attempts3)
@@ -178,7 +176,6 @@ while start_game == True:
           complete_guess = False
         else:
           attempts1.append(guess_match(answer1, word))
-          # display_graphics(attempts1, max_attempts)
           table.add_column("Wordle", attempts1)
           print(table)
           if word == answer1:
